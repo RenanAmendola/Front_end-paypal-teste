@@ -1,0 +1,60 @@
+<div class="container-fluid" >
+
+    <div class="row d-flex align-items-center " id="img-bg">
+
+        <div class=" ">
+
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-6 background pt-4 pb-5 ps-5 pe-5 rounded register_space">
+                    <h1 class="text-center mb-2">Sing up</h1>
+
+                    <p class="text-center">
+                        Create your acount for free!
+                    </p>
+
+                    <div class="form-group mb-1">
+                        <label for="name">Name</label>
+                        <input [(ngModel)]="user.name" class="form-control" type="text" name="name" id="name">
+                    </div>
+
+                    <div class="form-group mb-1">
+                        <label for="last_name">Last name</label>
+                        <input [(ngModel)]="user.last_name" class="form-control" type="text" name="last_name" id="last_name">
+                    </div>
+
+                    <div class="form-group mb-1">
+                        <label for="phone">Phone number</label>
+                        <input [(ngModel)]="user.phone" appOnlyNumbers class="form-control" type="text" name="phone" id="phone" >
+                    </div>
+
+                    <div class="form-group mb-1">
+                        <label for="phone">E-mail</label>
+                        <input [(ngModel)]="user.email" class="form-control" type="text" name="email" id="email" placeholder="email@email.com">
+                    </div>
+
+                    <div class="form-group mb-1">
+                        <label for="password">Password</label>
+                        <input (input)="confirm_password($event)" class="form-control" type="password" name="password" id="password" placeholder="Your password here">
+                    </div>
+
+                    <div class="form-group mb-4">
+                        <label for="confirm_password">Confirm password</label>
+                        <input [(ngModel)]="user.password" class="form-control" type="password" name="confirm_password" id="confirm_password" placeholder="Confirm your password here">
+                    </div>
+
+                    <div class="d-flex  justify-content-around">
+                        <button type="submit" class="btn btn-danger" routerLink="/login">Cancel</button>
+                        <button type="submit" class="btn btn-success" (click)="register()">Register</button>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>

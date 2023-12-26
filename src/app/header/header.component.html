@@ -1,0 +1,23 @@
+<nav class="navbar navbar-expand-lg navbar-secondary bg-secondary">
+    <div class="container-fluid">
+      <a class="navbar-brand ms-2 text-white" routerLink="/home">Home</a>
+      <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="d-flex collapse navbar-collapse justify-conten" id="navbarSupportedContent">
+        <ul class="navbar-nav  mb-2 mb-lg-0 ms-auto p-2">
+          <li class="nav-item dropdown me-5">
+            <button class="nav-link dropdown-toggle me-5 text-white"  role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Perfil
+            </button>
+            <ul class="dropdown-menu me-5">
+              <li><a class="dropdown-item" routerLink="/profile">User info</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item " (click)="logout()">Log out</a></li>
+            </ul>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>

@@ -1,0 +1,66 @@
+<app-header></app-header>
+
+<div class="container-fluid" >
+
+    <div class="row d-flex align-items-center " id="img-bg">
+
+        <div class=" ">
+
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-6 background pt-4 pb-5 ps-5 pe-5 rounded register_space">
+                    <h1 class="text-center mb-2">Sing up</h1>
+
+                    <p class="text-center">
+                        Create your acount for free!
+                    </p>
+
+                    <div class="form-group mb-1">
+                        <label for="adress_1">Adress 1</label>
+                        <input [(ngModel)]="adress.adress_1" class="form-control" type="text" name="adress_1" id="adress_1" required>
+                    </div>
+
+                    <div class="form-group mb-1">
+                        <label for="adress_2">Adress 2</label>
+                        <input [(ngModel)]="adress.adress_2" class="form-control" type="text" name="adress_2" id="adress_2">
+                    </div>
+
+                    <div class="form-group mb-1">
+                        <label for="country">Country</label>
+                        <input [(ngModel)]="adress.country" class="form-control" type="text" name="country" id="country" required>
+                    </div>
+
+                    <div class="form-group mb-1">
+                        <label for="state">State</label>
+                        <input [(ngModel)]="adress.state" class="form-control" type="text" name="state" id="state" required>
+                    </div>
+
+                    <div class="form-group mb-1">
+                        <label for="province">Province</label>
+                        <input [(ngModel)]="adress.province" class="form-control" type="text" name="province" id="province" required>
+                    </div>
+
+                    <div class="form-group mb-4">
+                        <label for="postal_code">Postal code</label>
+                        <input [(ngModel)]="adress.postal_code" appOnlyNumbers maxlength="5" class="form-control" type="text" name="postal_code" id="postal_code" required>
+                    </div>
+
+                    <div class="d-flex  justify-content-around">
+                        <button type="submit" class="btn btn-danger" routerLink="/home">Cancel</button>
+                        <button type="submit" class="btn btn-success" (click)="add_adress()">Register</button>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>
+
+<footer>
+    <app-footer></app-footer>
+</footer>

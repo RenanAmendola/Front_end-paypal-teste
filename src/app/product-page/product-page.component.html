@@ -1,0 +1,14 @@
+<app-header></app-header>
+
+
+
+<h1>{{product.name}}</h1>
+<h1>{{product.description}}</h1>
+<h1>{{product.price}}</h1>
+<h1>{{product.id}}</h1>
+
+<button class="btn btn-success" [routerLink]="['/cart', product.id]">Buy now!</button>
+
+<footer>
+    <app-footer></app-footer>
+</footer>

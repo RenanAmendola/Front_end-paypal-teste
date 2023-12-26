@@ -1,0 +1,32 @@
+<app-header></app-header>
+
+<div class="container">
+    <h1 class="d-flex justify-content-center text-capitalize fw-semibold mt-4 mb-4 pt-2 pb-3 border border-dark">Shopping mall online</h1>
+
+    <button routerLink="/add_product" type="button" class="btn btn-outline-secondary mb-4">Add product</button>
+    
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <ul *ngFor="let product of products">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                <a [routerLink]="['/product_page', product.id]">
+                <h5 class="card-title">{{ product.name }}</h5></a>
+                <p class="card-text">{{ product.description }}</p>
+                
+                </div>
+                <ul class="list-group list-group-flush">
+                <li class="list-group-item">U${{ product.price }}</li>
+                <li class="list-group-item">ID: {{ product.id }}</li>
+                </ul>
+            </div>
+        </ul>
+    </div>
+
+
+</div>
+
+    
+
+<footer>
+    <app-footer></app-footer>
+</footer>

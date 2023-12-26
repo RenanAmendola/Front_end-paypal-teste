@@ -1,0 +1,53 @@
+<app-header></app-header>
+
+<div class="container-fluid" >
+
+    <div class="row d-flex align-items-center " id="img-bg">
+
+        <div class=" ">
+
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-6 background pt-4 pb-5 ps-5 pe-5 rounded register_space">
+                    <h1 class="text-center mb-2">Sing up</h1>
+
+                    <p class="text-center">
+                        Create your acount for free!
+                    </p>
+
+                    <div class="form-group mb-1">
+                        <label for="name">Name</label>
+                        <input [(ngModel)]="product.name" class="form-control" type="text" name="name" id="name">
+                    </div>
+
+                    <div class="form-group mb-1">
+                        <label for="description">description</label>
+                        <input [(ngModel)]="product.description" class="form-control" type="text" maxlength="500" name="description" id="description">
+                    </div>
+
+                    <div class="form-group mb-5">
+                        <label for="price">Price</label>
+                        <input [(ngModel)]="product.price" class="form-control" type="text" appOnlyNumbers name="price" id="price" >
+                    </div>
+
+                    <div class="d-flex  justify-content-around ">
+                        <button type="submit" class="btn btn-danger" routerLink="/home">Cancel</button>
+                        <button type="submit" class="btn btn-success" (click)="add_product()">Register</button>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<footer>
+    <app-footer></app-footer>
+</footer>
+

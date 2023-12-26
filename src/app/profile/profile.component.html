@@ -1,0 +1,22 @@
+<app-header></app-header>
+
+    <h1>{{userLog.id}}</h1>
+    <h1>{{userLog.name}}</h1>
+    <h1>{{userLog.last_name}}</h1>
+    <h1>{{userLog.email}}</h1>
+    <h1>{{userLog.phone}}</h1>
+
+
+    <div class="container" *ngIf="with_adress">
+    {{adress.adress_1}}        
+    </div>  
+
+    <div class="container" *ngIf="with_out_adress">
+    <button routerLink="/add_adress">Add adress</button>      
+    </div>  
+
+
+
+<footer>
+    <app-footer></app-footer>
+</footer>

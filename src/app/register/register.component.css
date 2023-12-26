@@ -1,0 +1,19 @@
+#img-bg{
+
+    background-image: url(../../assets/img/carrinho-de-compras-de-design-xadrez.png);
+
+    min-height: 945px;
+    background-position: center;
+    background-repeat: repeat;
+
+
+}
+
+.background{
+    
+    background-color: rgb(211, 211, 211);
+}
+
+.register_space{
+    max-width: 460px;
+}
