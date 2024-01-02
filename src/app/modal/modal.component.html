@@ -1,0 +1,15 @@
+
+        <div class="modal-header">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="activeModal.dismiss('Cross click')" routerLink="/home">Close</button>
+        </div>
+        <div class="modal-body">
+            <div >
+                <h3>Thanks for your purchase!!!</h3>
+                <hr>
+                <h5>Sumari</h5>
+                <div *ngFor="let item of itens">
+                    <p>Name: <b> {{item.name}}</b></p>
+                    <p>Price: <b> {{item.unit_amount.value}}</b></p>
+                </div>
+            </div>
+        </div>

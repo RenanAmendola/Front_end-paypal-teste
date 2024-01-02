@@ -30,17 +30,6 @@ export class LoginComponent implements OnInit{
 
 
 
-  /*login(){
-
-    this.auth.login(this.userLog).subscribe((resp: UserLogin) => {
-      this.userLog = resp
-      this.router.navigate(['/home'])
-      alert("Successfully logged in")
-    })
-
-  }*/
-
-
   login(): void {
     if (this.userLog.email && this.userLog.password) {
       this.auth.login(this.userLog).subscribe(

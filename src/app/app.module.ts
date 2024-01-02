@@ -18,6 +18,8 @@ import { ProductPageComponent } from './product-page/product-page.component';
 import { CartComponent } from './cart/cart.component';
 import { AddAdressComponent } from './add-adress/add-adress.component';
 import { NgxPayPalModule } from 'ngx-paypal';
+import { ModalComponent } from './modal/modal.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,8 @@ import { NgxPayPalModule } from 'ngx-paypal';
     OnlyNumbersDirective,
     ProductPageComponent,
     CartComponent,
-    AddAdressComponent
+    AddAdressComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +43,8 @@ import { NgxPayPalModule } from 'ngx-paypal';
     FontAwesomeModule,
     HttpClientModule,
     FormsModule,
-    NgxPayPalModule
+    NgxPayPalModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

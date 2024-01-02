@@ -5,7 +5,9 @@ import { AuthService } from '../service/auth.service';
 import { UserLogin } from '../model/UserLogin';
 import { environment } from '../../environments/environment.prod';
 import { Adress } from '../model/Adress';
-import { ICreateOrderRequest, IPayPalConfig } from 'ngx-paypal';
+import { ICreateOrderRequest, IPayPalConfig, ITransactionItem } from 'ngx-paypal';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ModalComponent } from '../modal/modal.component';
 
 
 
@@ -24,7 +26,8 @@ export class CartComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private auth: AuthService
+    private auth: AuthService,
+    private modalService : NgbModal
   ) { }
 
   ngOnInit(): void {
@@ -132,7 +135,11 @@ export class CartComponent implements OnInit {
         });
       },
       onClientAuthorization: (data) => {
-        console.log('onClientAuthorization - you should probably inform your server about completed transaction at this point', data);
+        console.log('onClientAuthorization - you should probably inform your server about completed transaction at this point', 
+        JSON.stringify(data))
+        this.openModal(
+          data.purchase_units[0].items
+        );
       },
       onCancel: (data, actions) => {
         console.log('OnCancel', data, actions);
@@ -143,7 +150,17 @@ export class CartComponent implements OnInit {
       onClick: (data, actions) => {
         console.log('onClick', data, actions);
       }
+
+
+
     };
+
+  }
+
+  openModal(itens: ITransactionItem[]): void {
+    const modalRef = this.modalService.open(ModalComponent)
+    modalRef.componentInstance.itens = itens;
+
   }
   
   
