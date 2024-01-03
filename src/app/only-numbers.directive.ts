@@ -11,7 +11,7 @@ export class OnlyNumbersDirective {
   onInputChange(event: Event): void {
     const inputElement = this.elementRef.nativeElement as HTMLInputElement;
     const currentValue = inputElement.value;
-    const sanitizedValue = currentValue.replace(/[^0-9]/g, ''); // Remove caracteres não numéricos
+    const sanitizedValue = currentValue.replace(/[^0-9]/g, '');
     inputElement.value = sanitizedValue;
   }
 

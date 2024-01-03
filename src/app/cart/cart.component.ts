@@ -51,7 +51,7 @@ export class CartComponent implements OnInit {
     this.adress.province = environment.province
     this.adress.postal_code = environment.postal_code
 
-    this.isPayPalButtonDisabled = !this.adress.id; // Atualizando variável de controle
+    this.isPayPalButtonDisabled = !this.adress.id;
   
   }
 
@@ -110,9 +110,9 @@ export class CartComponent implements OnInit {
           },
           email_address: this.userLog.email,
           phone: {
-            phone_type: 'MOBILE',  // Adicione esta linha se quiser incluir um número de telefone
+            phone_type: 'MOBILE',  
             phone_number: {
-              national_number: '5555555555',  // Substitua pelo número real
+              national_number: this.userLog.phone,  
             },
           },
           address: {

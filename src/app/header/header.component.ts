@@ -17,7 +17,7 @@ export class HeaderComponent {
   adress: Adress = new Adress
 
   logout() {
-    // User detailes
+  
     environment.user_id = 0,
     environment.user_name= "",
     environment.user_last_name='',
@@ -25,7 +25,7 @@ export class HeaderComponent {
     environment.user_email='',
     environment.user_adress={},
 
-   //Adress detailes
+
 
    environment.Adress_id= 0,
    environment.adress_1='',

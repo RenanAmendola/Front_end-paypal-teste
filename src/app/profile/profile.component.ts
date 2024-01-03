@@ -15,8 +15,8 @@ export class ProfileComponent implements OnInit{
 
   adress : Adress = new Adress
 
-  with_adress: boolean = false; // Adicionando a propriedade com_adress
-  with_out_adress: boolean = false; // Adicionando a propriedade com_adress
+  with_adress: boolean = false; 
+  with_out_adress: boolean = false; 
 
 
   ngOnInit() {
@@ -36,8 +36,8 @@ export class ProfileComponent implements OnInit{
     this.adress.province = environment.province 
     this.adress.postal_code = environment.postal_code
 
-    this.with_adress = this.adress.id !== 0; // Define with_adress com base na condição
-    this.with_out_adress = this.adress.id == 0; // Define with_adress com base na condição
+    this.with_adress = this.adress.id !== 0; 
+    this.with_out_adress = this.adress.id == 0; 
 
   }
 

@@ -49,7 +49,7 @@ export class LoginComponent implements OnInit{
           this.router.navigate(['/home']);
         });
     } else {
-      // Handle empty username or password
+      
       alert('Username and password are required.');
     }
   }
