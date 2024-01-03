@@ -1,12 +1,12 @@
 <app-header></app-header>
 
-<div class="container-fluid">
-
-    <div class="row mt-3 d-flex align-items-center">
+<div class="container-fluid mt-3">
+    <div class="row">
         <div class="col-md-6 d-flex align-items-center flex-column">
             <h2>User info</h2>
             <div class="d-flex align-items-center">
                 <div class="User_Info pb-5 pt-2 ps-2 pe-2 me-3 border">
+                    <!-- Conteúdo do usuário aqui -->
                     <div class="form-group">
                         <label for="name">Name:</label>
                         <input value="{{userLog.name}}" class="form-control" type="text" name="name" id="name" readonly>
@@ -23,8 +23,10 @@
                         <label for="phone">Phone number:</label>
                         <input value="{{userLog.phone}}" class="form-control" type="text" name="phone" id="phone" readonly>
                     </div>
+                    <button class="btn btn-success" routerLink="/update_user">Edit User</button>
                 </div>
-                <div class="Adress_Info pb-2 pt-2 ps-2 pe-2 me-3 mb-5 border">
+                <div class="Adress_Info pb-2 pt-2 ps-2 pe-2 me-3 mb-5 border" *ngIf="adress.id">
+                    <!-- Conteúdo do endereço aqui -->
                     <div class="form-group ">
                         <label for="adress_1">Adress 1°:</label>
                         <input value="{{adress.adress_1}}" class="form-control" type="text" name="adress_1" id="adress_1" readonly>
@@ -45,13 +47,19 @@
                         <label for="province">Province:</label>
                         <input value="{{adress.province}}" class="form-control" type="text" name="province" id="province" readonly>
                     </div>
-                    <div class="form-group ">
+                    <div class="form-group mb-4">
                         <label for="postal_code">Postal code:</label>
                         <input value="{{adress.postal_code}}" class="form-control" type="text" name="postal_code" id="postal_code" readonly>
                     </div>
-
-
+                    <button class="btn btn-success" routerLink="/update_adress">Edit Adress</button>
                 </div>
+                <div class="Adress_Info pb-2 pt-2 ps-2 pe-2 me-3 mb-5 border" *ngIf="!adress.id">
+                    <!-- Conteúdo do endereço aqui -->
+                    <h4>Ops, you don't have a adress registred yet, please add one to your acount
+                    </h4>
+                    <button class="btn btn-primary btn-block mt-3" *ngIf="!adress.id" [routerLink]="['/add_adress']">Add Address</button>
+                </div>
+                
             </div>
         </div>
         <div class="col-md-4 d-flex flex-column align-items-center">
@@ -64,23 +72,17 @@
                     <p>Name:</p> <p>{{product.name}}</p>
                 </div>
                 <div class="d-flex align-items-end justify-content-between">
-                    <pre>description: </pre><p> {{product.description}}</p>
-                    
+                    <pre>description: </pre><p> {{product.description}}</p>             
                 </div>
-                <hr>
                 <div class="d-flex justify-content-between">
-                    <p>Price:</p> <p>{{product.price}}</p>
+                    <p>Price:</p> <p>U${{product.price}}</p>
                 </div>
-                <ngx-paypal [config]="payPalConfig"></ngx-paypal>
-            </div>
+                <ngx-paypal [config]="payPalConfig" *ngIf="adress.id"></ngx-paypal>
 
-            
+            </div>
         </div>
     </div>
 </div>
-
-
-
 
 <footer>
     <app-footer></app-footer>

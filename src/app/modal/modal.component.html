@@ -6,9 +6,11 @@
             <div >
                 <h3>Thanks for your purchase!!!</h3>
                 <hr>
-                <h5>Sumari</h5>
+                <h4> Your purchase was made successfully</h4>
+                <hr>
+                <h5>Summary</h5>
                 <div *ngFor="let item of itens">
-                    <p>Name: <b> {{item.name}}</b></p>
+                    <p>Product: <b> {{item.name}}</b></p>
                     <p>Price: <b> {{item.unit_amount.value}}</b></p>
                 </div>
             </div>

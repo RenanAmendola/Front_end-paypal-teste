@@ -8,6 +8,8 @@ import { AddProductComponent } from './add-product/add-product.component';
 import { ProductPageComponent } from './product-page/product-page.component';
 import { CartComponent } from './cart/cart.component';
 import { AddAdressComponent } from './add-adress/add-adress.component';
+import { UserEditComponent } from './user-edit/user-edit.component';
+import { EditAdressComponent } from './edit-adress/edit-adress.component';
 
 
 const routes: Routes = [
@@ -21,7 +23,9 @@ const routes: Routes = [
   {path:'add_product', component:AddProductComponent},
   {path:'product_page/:id', component:ProductPageComponent},
   {path:'cart/:id', component:CartComponent},
-  {path:'add_adress', component:AddAdressComponent}
+  {path:'add_adress', component:AddAdressComponent},
+  {path:'update_user', component:UserEditComponent},
+  {path:'update_adress', component:EditAdressComponent}
 
 ];
 

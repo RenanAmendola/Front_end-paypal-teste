@@ -1,0 +1,54 @@
+<app-header></app-header>
+
+<div class="col-md-12 d-flex align-items-center flex-column">
+    <h2 class="mb-2">User edit</h2>
+    <div class="d-flex align-items-center mb-4">
+        <div class="User_Info pb-5 pt-2 ps-2 pe-2 me-3 ">
+            <div class="form-group">
+                <label for="id">Id:</label>
+                <input [(ngModel)]="userLog.id" value="{{userLog.id}}" class="form-control" type="text" name="id" id="id" >
+            </div>
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input [(ngModel)]="userLog.name" value="{{userLog.name}}" class="form-control" type="text" name="name" id="name" >
+            </div>
+            <div class="form-group">
+                <label for="last_name">Last name:</label>
+                <input [(ngModel)]="userLog.last_name" value="{{userLog.last_name}}" class="form-control" type="text" name="last_name" id="last_name" >
+            </div>
+            <div class="form-group">
+                <label for="email">E-mail:</label>
+                <input [(ngModel)]="userLog.email" value="{{userLog.email}}" class="form-control" type="text" name="email" id="email" >
+            </div>
+            <div class="form-group mb-4">
+                <label for="phone">Phone number:</label>
+                <input [(ngModel)]="userLog.phone" value="{{userLog.phone}}" class="form-control" type="text" name="phone" id="phone" >
+            </div>
+            <div class="form-group mb-2">
+                <label for="password">Password</label>
+                <input (input)="confirm_password($event)" class="form-control" type="password" name="password" id="password" placeholder="Your password here">
+            </div>
+
+            <div class="form-group mb-4">
+                <label for="confirm_password">Confirm password</label>
+                <input [(ngModel)]="userLog.password" class="form-control" type="password" name="confirm_password" id="confirm_password" placeholder="Confirm your password here">
+            </div>
+        </div>
+ 
+    </div>
+
+    <div class="d-flex  justify-content-around mb-5">
+        <button type="submit" class="btn btn-danger me-3" routerLink="/home">Cancel</button>
+        <button type="submit" class="btn btn-success" (click)="update()">Update</button>
+    </div>
+</div>
+
+    
+
+
+
+
+
+<footer>
+    <app-footer></app-footer>
+</footer>

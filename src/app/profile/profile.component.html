@@ -1,19 +1,71 @@
 <app-header></app-header>
 
-    <h1>{{userLog.id}}</h1>
-    <h1>{{userLog.name}}</h1>
-    <h1>{{userLog.last_name}}</h1>
-    <h1>{{userLog.email}}</h1>
-    <h1>{{userLog.phone}}</h1>
+<div class="col-md-12 d-flex align-items-center flex-column">
+    <h2 class="mb-2">User info/adress</h2>
+    <div class="d-flex align-items-center mb-4">
+        <div class="User_Info pb-5 pt-2 ps-2 pe-2 me-3 border">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input value="{{userLog.name}}" class="form-control" type="text" name="name" id="name" readonly>
+            </div>
+            <div class="form-group">
+                <label for="last_name">Last name:</label>
+                <input value="{{userLog.last_name}}" class="form-control" type="text" name="last_name" id="last_name" readonly>
+            </div>
+            <div class="form-group">
+                <label for="email">E-mail:</label>
+                <input value="{{userLog.email}}" class="form-control" type="text" name="email" id="email" readonly>
+            </div>
+            <div class="form-group mb-4">
+                <label for="phone">Phone number:</label>
+                <input value="{{userLog.phone}}" class="form-control" type="text" name="phone" id="phone" readonly>
+            </div>
+
+            <button class="btn btn-success" routerLink="/update_user">Edit User</button>
+        </div>
+
+        <div class="container" *ngIf="with_adress">
+            <div class="Adress_Info pb-2 pt-2 ps-2 pe-2 me-3 mb-5 border">
+                <div class="form-group ">
+                    <label for="adress_1">Adress 1°:</label>
+                    <input value="{{adress.adress_1}}" class="form-control" type="text" name="adress_1" id="adress_1" readonly>
+                </div>
+                <div class="form-group ">
+                    <label for="adress_2">Adress 2°:</label>
+                    <input value="{{adress.adress_2}}" class="form-control" type="text" name="adress_2" id="adress_2" readonly>
+                </div>
+                <div class="form-group ">
+                    <label for="country">Country:</label>
+                    <input value="{{adress.country}}" class="form-control" type="text" name="country" id="country" readonly>
+                </div>
+                <div class="form-group ">
+                    <label for="state">State:</label>
+                    <input value="{{adress.state}}" class="form-control" type="text" name="state" id="state" readonly>
+                </div>
+                <div class="form-group ">
+                    <label for="province">Province:</label>
+                    <input value="{{adress.province}}" class="form-control" type="text" name="province" id="province" readonly>
+                </div>
+                <div class="form-group mb-4">
+                    <label for="postal_code">Postal code:</label>
+                    <input value="{{adress.postal_code}}" class="form-control" type="text" name="postal_code" id="postal_code" readonly>
+                </div>
+
+                <button class="btn btn-success" routerLink="/update_adress">Edit Adress</button>
+
+            </div>
+
+        </div>
+        <div class="container" *ngIf="with_out_adress">
+            <button routerLink="/add_adress">Add adress</button>      
+        </div>  
+    </div>
+    
+</div>
+
+    
 
 
-    <div class="container" *ngIf="with_adress">
-    {{adress.adress_1}}        
-    </div>  
-
-    <div class="container" *ngIf="with_out_adress">
-    <button routerLink="/add_adress">Add adress</button>      
-    </div>  
 
 
 

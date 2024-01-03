@@ -23,6 +23,7 @@ export class CartComponent implements OnInit {
   userLog: UserLogin = new UserLogin
   product: Product = new Product()
   adress: Adress = new Adress
+  isPayPalButtonDisabled: boolean = true;
 
   constructor(
     private route: ActivatedRoute,
@@ -49,6 +50,9 @@ export class CartComponent implements OnInit {
     this.adress.state = environment.state
     this.adress.province = environment.province
     this.adress.postal_code = environment.postal_code
+
+    this.isPayPalButtonDisabled = !this.adress.id; // Atualizando variável de controle
+  
   }
 
   get_product_id(id: number) {

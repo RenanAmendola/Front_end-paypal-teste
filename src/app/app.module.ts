@@ -20,6 +20,8 @@ import { AddAdressComponent } from './add-adress/add-adress.component';
 import { NgxPayPalModule } from 'ngx-paypal';
 import { ModalComponent } from './modal/modal.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { UserEditComponent } from './user-edit/user-edit.component';
+import { EditAdressComponent } from './edit-adress/edit-adress.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ProductPageComponent,
     CartComponent,
     AddAdressComponent,
-    ModalComponent
+    ModalComponent,
+    UserEditComponent,
+    EditAdressComponent
   ],
   imports: [
     BrowserModule,

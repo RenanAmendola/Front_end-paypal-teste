@@ -23,8 +23,16 @@ export class AuthService {
     return this.http.post<User>('https://backend-paypal-teste-production.up.railway.app/User/Sing_up', user)
   }
 
+  update_user(userLogin: UserLogin): Observable<UserLogin>{
+    return this.http.put<UserLogin>('https://backend-paypal-teste-production.up.railway.app/User/Update', userLogin)
+  }
+
   add_adress(adress: Adress): Observable<Adress>{
     return this.http.post<Adress>(`https://backend-paypal-teste-production.up.railway.app/Adress`, adress)
+  }
+
+  update_adress(adress: Adress): Observable<Adress>{
+    return this.http.put<Adress>(`https://backend-paypal-teste-production.up.railway.app/Adress`, adress)
   }
 
   get_all_products(): Observable<Product[]>{
